@@ -109,6 +109,18 @@ class MyApp extends StatelessWidget {
                 ),
                 Container(
                   width: 148.0,
+                  color: Colors.black54,
+                  child: Column (
+                    children: const <Widget>[
+                      ListTile(
+                        leading: Icon(Icons.tv),
+                        title: Text('TV'),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 148.0,
                   color: Colors.orange,
                   child: Column (
                     children: const <Widget>[
