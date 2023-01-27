@@ -73,6 +73,42 @@ class MyApp extends StatelessWidget {
                 ),
                 Container(
                   width: 148.0,
+                  color: Colors.lightGreenAccent,
+                  child: Column (
+                    children: const <Widget>[
+                      ListTile(
+                        leading: Icon(Icons.book),
+                        title: Text('Book'),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 148.0,
+                  color: Colors.greenAccent,
+                  child: Column (
+                    children: const <Widget>[
+                      ListTile(
+                        leading: Icon(Icons.signal_cellular_connected_no_internet_0_bar),
+                        title: Text('Internet'),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 148.0,
+                  color: Colors.purpleAccent,
+                  child: Column (
+                    children: const <Widget>[
+                      ListTile(
+                        leading: Icon(Icons.wifi),
+                        title: Text('WiFi'),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: 148.0,
                   color: Colors.orange,
                   child: Column (
                     children: const <Widget>[
