@@ -40,6 +40,13 @@ const List<Choice> choices = <Choice>[
   Choice(title: 'Setting', icon: Icons.settings),
   Choice(title: 'Album', icon: Icons.photo_album),
   Choice(title: 'WiFi', icon: Icons.wifi),
+  Choice(title: 'TV', icon: Icons.tv),
+  Choice(title: 'Internet', icon: Icons.signal_cellular_connected_no_internet_4_bar_sharp),
+  Choice(title: 'Book', icon: Icons.book),
+  Choice(title: 'eBook', icon: Icons.book_online_outlined),
+  Choice(title: 'Facebook', icon: Icons.facebook),
+  Choice(title: 'Whatsapp', icon: Icons.whatsapp),
+  Choice(title: 'Bookmarks', icon: Icons.bookmark),
 ];
 
 class SelectCard extends StatelessWidget {
