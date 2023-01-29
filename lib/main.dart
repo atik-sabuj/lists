@@ -1,23 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:lists/home_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const BottomSheetApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BottomSheetApp extends StatelessWidget {
+  const BottomSheetApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Bottom Sheet Sample')),
+        body: const BottomSheetExample(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
+    );
+  }
+}
+
+class BottomSheetExample extends StatelessWidget {
+  const BottomSheetExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        child: const Text('showModalBottomSheet'),
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (BuildContext context) {
+              return Container(
+                height: 200,
+                color: Colors.amber,
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Text('Modal BottomSheet'),
+                      ElevatedButton(
+                        child: const Text('Close BottomSheet'),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
