@@ -13,45 +13,36 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Layout Builder'),
+        title: const Text("Show Alert Box"),
+        backgroundColor: Colors.green,
       ),
+      // ignore: avoid_unnecessary_containers
       body: Container(
-        color: Colors.indigo,
-
-        /// Giving dimensions to parent Container
-        /// using MediaQuery
-        /// [container's height] = [(phone's height) / 2]
-        /// [container's width] = [phone's width]
-        height: MediaQuery.of(context).size.height * 0.5,
-        width: MediaQuery.of(context).size.width,
-
-        /// Aligning contents of this Container
-        /// to center
-        alignment: Alignment.center,
-
-        child: LayoutBuilder(
-          builder: (BuildContext ctx, BoxConstraints constraints) {
-            return Container(
-              color: Colors.green,
-
-              /// Aligning contents of this Container
-              /// to center
-              alignment: Alignment.center,
-
-              /// Using parent's constraints
-              /// to calculate child's height and width
-              height: constraints.maxHeight * 0.5,
-              width: constraints.maxWidth * 0.5,
-              child: Text(
-                'LayoutBuilder Widget',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+        child: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (ctx) => AlertDialog(
+                  title: const Text("Alert Dialog Box"),
+                  content: const Text("You have raised a Alert Dialog Box"),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(ctx).pop();
+                      },
+                      child: Container(
+                        color: Colors.yellow,
+                        padding: const EdgeInsets.all(14),
+                        child: const Text("Okay"),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            );
-          },
+              );
+            },
+            child: const Text("Show alert Dialog box"),
+          ),
         ),
       ),
     );
